@@ -42,19 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = tasteMeshSection.getBoundingClientRect();
       const x = e.clientX - rect.left; // x position within element
       const y = e.clientY - rect.top;  // y position within element
-      
+
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-      
+
       const deltaX = (x - centerX) / centerX; // value between -1 and 1
       const deltaY = (y - centerY) / centerY; // value between -1 and 1
-      
+
       // Animate each floating item with slightly different weights (depth speed)
       floatItems.forEach((item, index) => {
         const factor = (index % 3 + 1) * 15; // 15px, 30px, 45px max movement
         const moveX = deltaX * factor;
         const moveY = deltaY * factor;
-        
+
         item.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
       });
     });
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     trigger.addEventListener('click', () => {
       const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-      
+
       // Close all other FAQ items first
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
@@ -126,4 +126,87 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 6. GSAP Expertise Scroll Effect
+  if (typeof gsap !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // --- Hero Section Cinematic Entrance ---
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+      const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      // Video: cinematic zoom-in reveal
+      heroTl.fromTo('.bg-video',
+        { scale: 1.2, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 2 }
+      );
+
+      // Cloud card: float up from below
+      heroTl.fromTo('.hero-content',
+        { y: 60, opacity: 0, scale: 0.95 },
+        { y: 0, opacity: 1, scale: 1, duration: 1.2 },
+        '-=1.2' // overlap with video
+      );
+
+      // Title: slide up and fade in
+      heroTl.fromTo('.hero-title',
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.9 },
+        '-=0.7'
+      );
+
+      // Subtitle paragraph
+      heroTl.fromTo('.hero-actions p',
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        '-=0.4'
+      );
+
+      // CTA buttons: stagger in
+      heroTl.fromTo('.hero-actions .btn',
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, stagger: 0.15 },
+        '-=0.3'
+      );
+
+      // Parallax on scroll: video zooms slightly as you scroll down
+
+    }
+
+    // --- Expertise Scroll Effect ---
+    const expSection = document.querySelector('.expertise-scroll');
+    if (expSection) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: expSection,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1
+        }
+      });
+
+      // Text sequence timeline
+      tl.to('.exp-text-1', { opacity: 0, y: -50, duration: 1 }, 1)
+        .fromTo('.exp-text-2', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 }, 2)
+        .to('.exp-text-2', { opacity: 0, y: -50, duration: 1 }, 3)
+        .fromTo('.exp-text-3', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 }, 4)
+        .to('.exp-text-3', { opacity: 0, y: -50, duration: 1 }, 5)
+        .fromTo('.exp-text-4', { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 1 }, 6);
+
+      // Images parallax timeline — pairs share timing to match CSS pair layout
+      const images = document.querySelectorAll('.exp-img');
+      images.forEach((img, i) => {
+        // Reduced speed variation for a smoother, slower drift
+        const speedMultiplier = 1.1 + (i % 4) * 0.2; // 1.1, 1.3, 1.5, 1.7
+        const startOffset = (i % 15) * 0.5; // 15 timing slots → pairs of 2 images max
+
+        tl.to(img, {
+          y: '-150vh', // Less distance to travel -> slower perceived speed
+          duration: 2 / speedMultiplier, // Longer duration -> slower
+          ease: 'none'
+        }, startOffset);
+      });
+    }
+  }
 });
