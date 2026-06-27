@@ -132,46 +132,184 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // --- Hero Section Cinematic Entrance ---
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-      const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    function playHeroEntrance() {
+      const heroSection = document.querySelector('.hero');
+      if (heroSection) {
+        const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      // Video: cinematic zoom-in reveal
-      heroTl.fromTo('.bg-video',
-        { scale: 1.2, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 2 }
-      );
+        // Video: cinematic zoom-in reveal
+        heroTl.fromTo('.bg-video',
+          { scale: 1.2, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 2 }
+        );
 
-      // Cloud card: float up from below
-      heroTl.fromTo('.hero-content',
-        { y: 60, opacity: 0, scale: 0.95 },
-        { y: 0, opacity: 1, scale: 1, duration: 1.2 },
-        '-=1.2' // overlap with video
-      );
+        // Cloud card: float up from below
+        heroTl.fromTo('.hero-content',
+          { y: 60, opacity: 0, scale: 0.95 },
+          { y: 0, opacity: 1, scale: 1, duration: 1.2 },
+          '-=1.2' // overlap with video
+        );
 
-      // Title: slide up and fade in
-      heroTl.fromTo('.hero-title',
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.9 },
-        '-=0.7'
-      );
+        // Title: slide up and fade in
+        heroTl.fromTo('.hero-title',
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.9 },
+          '-=0.7'
+        );
 
-      // Subtitle paragraph
-      heroTl.fromTo('.hero-actions p',
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8 },
-        '-=0.4'
-      );
+        // Subtitle paragraph
+        heroTl.fromTo('.hero-actions p',
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8 },
+          '-=0.4'
+        );
 
-      // CTA buttons: stagger in
-      heroTl.fromTo('.hero-actions .btn',
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, stagger: 0.15 },
-        '-=0.3'
-      );
+        // CTA buttons: stagger in
+        heroTl.fromTo('.hero-actions .btn',
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, stagger: 0.15 },
+          '-=0.3'
+        );
+      }
+    }
 
-      // Parallax on scroll: video zooms slightly as you scroll down
+    // --- Preloader Logic ---
+    const preloader = document.getElementById('preloader');
+    const progressBar = document.getElementById('preloader-bar');
 
+    const criticalImages = [
+      'assets/float_1.png',
+      'assets/float_2.png',
+      'assets/float_3.png',
+      'assets/float_4.png',
+      'assets/float_5.png',
+      'assets/float_6.png',
+      'assets/float_7.png',
+      'assets/float_8.png',
+      'assets/float_9.png',
+      'assets/float_10.png',
+      'assets/card_human_data.png',
+      'assets/card_arena.png',
+      'assets/card_benchmark.png',
+      'assets/card_agents.png',
+      'assets/mesh_bg.webp',
+      'assets/research_portrait.png',
+      'assets/footer_mesh.png',
+      'assets/bg_noise.png'
+    ];
+
+    let loadedCount = 0;
+    const totalAssets = criticalImages.length;
+    let targetProgress = 0;
+    let currentProgress = 0;
+    let preloaderDone = false;
+
+    function updateTargetProgress() {
+      if (totalAssets > 0) {
+        targetProgress = Math.min(100, Math.round((loadedCount / totalAssets) * 100));
+      } else {
+        targetProgress = 100;
+      }
+    }
+
+    // Preload Images
+    criticalImages.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        loadedCount++;
+        updateTargetProgress();
+      };
+      img.onerror = () => {
+        // Still count failures so we don't get stuck
+        loadedCount++;
+        updateTargetProgress();
+      };
+    });
+
+    // Safety timeout: force completion after 4.5 seconds
+    const safetyTimeout = setTimeout(() => {
+      targetProgress = 100;
+    }, 4500);
+
+    // Window load event: force completion
+    window.addEventListener('load', () => {
+      targetProgress = 100;
+    });
+
+    // Smooth progress loop
+    function animateProgress() {
+      if (preloaderDone) return;
+
+      // Linear interpolation for smooth count-up
+      const diff = targetProgress - currentProgress;
+      if (diff > 0.1) {
+        currentProgress += diff * 0.08; // smooth easing factor
+      } else {
+        currentProgress = targetProgress;
+      }
+
+      const visualPercent = Math.min(100, Math.floor(currentProgress));
+      
+      // Update DOM
+      if (progressBar) progressBar.style.width = `${visualPercent}%`;
+
+      if (visualPercent >= 100) {
+        preloaderDone = true;
+        clearTimeout(safetyTimeout);
+        finishPreloader();
+      } else {
+        requestAnimationFrame(animateProgress);
+      }
+    }
+
+    // Start progress animation
+    requestAnimationFrame(animateProgress);
+
+    function finishPreloader() {
+      if (!preloader) {
+        document.body.classList.remove('loading');
+        playHeroEntrance();
+        return;
+      }
+
+      if (typeof gsap !== 'undefined') {
+        const exitTl = gsap.timeline({
+          onComplete: () => {
+            preloader.style.display = 'none';
+            document.body.classList.remove('loading');
+          }
+        });
+
+        // Fade out and float up the contents
+        exitTl.to('.preloader-content', {
+          opacity: 0,
+          y: -40,
+          duration: 0.6,
+          ease: 'power3.in'
+        });
+
+        // Slide up the entire preloader panel
+        exitTl.to(preloader, {
+          yPercent: -100,
+          duration: 1.2,
+          ease: 'power4.inOut'
+        }, '-=0.3');
+
+        // Trigger the hero entrance timeline synchronously with the panel slide-up
+        exitTl.add(() => {
+          playHeroEntrance();
+        }, '-=0.9');
+      } else {
+        // Fallback if GSAP fails to load
+        preloader.style.transition = 'transform 1s ease-in-out, opacity 0.5s ease';
+        preloader.style.transform = 'translateY(-100%)';
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+          preloader.style.display = 'none';
+          document.body.classList.remove('loading');
+        }, 1000);
+      }
     }
 
     // --- Expertise Scroll Effect ---
