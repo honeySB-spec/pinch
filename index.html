@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinch | AI-Powered Community & Event Management Platform</title>
+  <meta name="description"
+    content="Pinch is an AI-powered community and event management platform that helps organizers plan events, manage members, and boost engagement using smart automation.">
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/logos_marquee.svg" type="image/svg+xml">
+
+  <!-- Google Fonts: Source Serif 4 & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <!-- Noise Overlay for premium paper texture feel -->
+  <div class="bg-noise" style="background-image: url('assets/bg_noise.png');"></div>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 22h20L12 2z" fill="currentColor" />
+        </svg>
+        <span>Pinch</span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#ecosystem" class="nav-link">Smart Memberships</a>
+        <a href="#ecosystem" class="nav-link">Seamless Events</a>
+        <a href="#agents" class="nav-link">AI Agents</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="http://dashboard.addpinch.com" target="_blank" class="btn btn-outline"
+          style="padding: 8px 20px; font-size: 14px;">Login</a>
+        <a href="http://download.addpinch.com" target="_blank" class="btn btn-primary">Get started for free</a>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="video-container">
+        <video autoplay loop muted playsinline class="bg-video">
+          <source src="assets/hero_bg.webm" type="video/webm">
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <h1 class="hero-title reveal-fade">The Future of Community Management Is Here</h1>
+        <div class="hero-actions reveal-fade" style="flex-direction: column; gap: 20px;">
+          <p style="font-size: 18px; color: var(--text-grey-dark); max-width: 600px; margin: 0 auto 12px;">
+            Pinch automates engagement, memberships and events so you can focus on real connections.
+          </p>
+          <div style="display: flex; gap: 16px; justify-content: center;">
+            <a href="http://download.addpinch.com" target="_blank" class="btn btn-dark">Get started for free</a>
+            <a href="https://calendly.com/partnerships-contra/contra-labs-partnership-request" target="_blank"
+              class="btn btn-outline">Book a Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE & SPLIT SECTION -->
+    <section class="tools-split">
+      <div class="tools-container">
+        <!-- Vertical scrolling list -->
+        <div class="vertical-marquee-wrapper">
+          <div class="vertical-marquee scroll-up">
+            <div class="marquee-item"><strong>STARTUPS</strong> <span>Founder circles</span></div>
+            <div class="marquee-item"><strong>STANDUP COMEDY</strong> <span>Ticketing & shows</span></div>
+            <div class="marquee-item"><strong>ALUMNI</strong> <span>Network building</span></div>
+            <div class="marquee-item"><strong>PROFESSIONALS</strong> <span>Knowledge sharing</span></div>
+            <div class="marquee-item"><strong>CREATOR CLUBS</strong> <span>Fan engagement</span></div>
+            <div class="marquee-item"><strong>TECH HUBS</strong> <span>Event organizing</span></div>
+            <div class="marquee-item"><strong>SPORTS CLUBS</strong> <span>Member directories</span></div>
+            <div class="marquee-item"><strong>HOBBY GROUPS</strong> <span>Discussions & meetups</span></div>
+            <div class="marquee-item"><strong>NON-PROFITS</strong> <span>Volunteer management</span></div>
+            <div class="marquee-item"><strong>BUSINESS NETWORKS</strong> <span>Referral loops</span></div>
+            <div class="marquee-item"><strong>ANGALA CLUB</strong> <span>Venue bookings</span></div>
+            <div class="marquee-item"><strong>DESIGN CIRCLES</strong> <span>Portfolio feedback</span></div>
+            <div class="marquee-item"><strong>INVESTOR NETWORKS</strong> <span>Deal flow sharing</span></div>
+            <div class="marquee-item"><strong>COLLEGE CLUBS</strong> <span>Campus events</span></div>
+            <div class="marquee-item"><strong>FITNESS COMMUNITIES</strong> <span>Class schedules</span></div>
+            <div class="marquee-item"><strong>CO-WORKING SPACES</strong> <span>Member matching</span></div>
+          </div>
+          <!-- Duplicate for seamless scroll -->
+          <div class="vertical-marquee scroll-up" aria-hidden="true">
+            <div class="marquee-item"><strong>STARTUPS</strong> <span>Founder circles</span></div>
+            <div class="marquee-item"><strong>STANDUP COMEDY</strong> <span>Ticketing & shows</span></div>
+            <div class="marquee-item"><strong>ALUMNI</strong> <span>Network building</span></div>
+            <div class="marquee-item"><strong>PROFESSIONALS</strong> <span>Knowledge sharing</span></div>
+            <div class="marquee-item"><strong>CREATOR CLUBS</strong> <span>Fan engagement</span></div>
+            <div class="marquee-item"><strong>TECH HUBS</strong> <span>Event organizing</span></div>
+            <div class="marquee-item"><strong>SPORTS CLUBS</strong> <span>Member directories</span></div>
+            <div class="marquee-item"><strong>HOBBY GROUPS</strong> <span>Discussions & meetups</span></div>
+            <div class="marquee-item"><strong>NON-PROFITS</strong> <span>Volunteer management</span></div>
+            <div class="marquee-item"><strong>BUSINESS NETWORKS</strong> <span>Referral loops</span></div>
+            <div class="marquee-item"><strong>ANGALA CLUB</strong> <span>Venue bookings</span></div>
+            <div class="marquee-item"><strong>DESIGN CIRCLES</strong> <span>Portfolio feedback</span></div>
+            <div class="marquee-item"><strong>INVESTOR NETWORKS</strong> <span>Deal flow sharing</span></div>
+            <div class="marquee-item"><strong>COLLEGE CLUBS</strong> <span>Campus events</span></div>
+            <div class="marquee-item"><strong>FITNESS COMMUNITIES</strong> <span>Class schedules</span></div>
+            <div class="marquee-item"><strong>CO-WORKING SPACES</strong> <span>Member matching</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split-text-side reveal-slide-right">
+        <h3 class="split-subtitle">Everything you <br>need to build and grow your community - powered by AI.</h3>
+        <a href="http://download.addpinch.com" target="_blank" class="btn btn-dark">Get started for free</a>
+      </div>
+    </section>
+
+    <!-- HORIZONTAL LOGOS MARQUEE -->
+    <section class="logos-marquee-section">
+      <div class="logos-marquee-wrapper">
+        <div class="logos-marquee">
+          <img src="assets/logos_marquee.svg" alt="Pinch Partners Marquee">
+          <img src="assets/logos_marquee.svg" alt="Pinch Partners Marquee" aria-hidden="true">
+        </div>
+      </div>
+    </section>
+
+    <!-- ECOSYSTEM SECTION -->
+    <section class="ecosystem" id="ecosystem">
+      <div class="section-header reveal-fade">
+        <h2 class="section-title">Meet the Pinch ecosystem</h2>
+        <p class="section-desc">We build the operational layer for communities, helping organizers manage members, run
+          events, and automate engagement effortlessly.</p>
+      </div>
+
+      <div class="ecosystem-grid">
+        <!-- Card 1: Smart Memberships -->
+        <div class="ecosystem-card reveal-slide-up">
+          <div class="card-image-container">
+            <img src="assets/card_human_data.png" alt="Smart Memberships">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">MEMBER DIRECTORY</span>
+            <h3 class="card-title">Smart Memberships</h3>
+            <p class="card-text">Turn your audience into a real community with verified memberships and profiles. Define
+              who joins, what they access, and how they engage. Pinch automatically creates an active member directory.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: Seamless Events -->
+        <div class="ecosystem-card reveal-slide-up">
+          <div class="card-image-container">
+            <img src="assets/card_arena.png" alt="Seamless Events">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">EVENT OPERATIONS</span>
+            <h3 class="card-title">Seamless Events</h3>
+            <p class="card-text">Create and publish your events in minutes. Pinch automates RSVPs, approvals, ticketing,
+              speakers, schedules, reminders, and post-event feedback, so you can focus on building relationships.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: 24/7 Companion Bot -->
+        <div class="ecosystem-card reveal-slide-up">
+          <div class="card-image-container">
+            <img src="assets/card_benchmark.png" alt="24/7 Companion Bot">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">COMMUNITY BOT</span>
+            <h3 class="card-title">24/7 Companion Bot</h3>
+            <p class="card-text">Pinch’s Engagement Bot answers event queries, shares updates, collects feedback, and
+              even sparks conversations automatically. It helps you maintain an active and warm community environment.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4: Growth Analytics -->
+        <div class="ecosystem-card reveal-slide-up">
+          <div class="card-image-container">
+            <img src="assets/card_agents.png" alt="Growth Analytics">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">GROWTH & IMPACT</span>
+            <h3 class="card-title">Growth Analytics</h3>
+            <p class="card-text">Pinch transforms participation, attendance, and feedback into clear, visual insights.
+              Understand who's active, what's working, and watch your community ecosystem thrive.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TASTE MESH SECTION (AI Agents) -->
+    <section class="taste-mesh" id="agents">
+      <!-- Grid Mesh Background -->
+      <div class="mesh-background" style="background-image: url('assets/mesh_bg.webp');"></div>
+
+      <!-- Scattered/Floating Decorative Assets -->
+      <div class="floating-assets" id="float-layer">
+        <img src="assets/float_1.png" class="float-item p1" alt="float item">
+        <img src="assets/float_2.png" class="float-item p2" alt="float item">
+        <img src="assets/float_3.png" class="float-item p3" alt="float item">
+        <img src="assets/float_4.png" class="float-item p4" alt="float item">
+        <img src="assets/float_5.png" class="float-item p5" alt="float item">
+        <img src="assets/float_6.png" class="float-item p6" alt="float item">
+        <img src="assets/float_7.png" class="float-item p7" alt="float item">
+        <img src="assets/float_8.png" class="float-item p8" alt="float item">
+        <img src="assets/float_9.png" class="float-item p9" alt="float item">
+        <img src="assets/float_10.png" class="float-item p10" alt="float item">
+      </div>
+
+      <div class="taste-mesh-content">
+        <div class="taste-mesh-header reveal-fade">
+          <h2 class="mesh-title">Meet your new team of AI agents</h2>
+          <p class="mesh-desc">Pinch is building a family of AI agents to handle the toughest parts of community and
+            event management – so you can do more with less.</p>
+        </div>
+
+        <div class="taste-mesh-grid reveal-fade">
+          <div class="mesh-card">
+            <span
+              style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--accent-mint); text-transform: uppercase; margin-bottom: 8px; display: block;">LIVE</span>
+            <h4 class="mesh-card-title">Engagement Agent</h4>
+            <p class="mesh-card-text">Keeps your members active and informed, automatically starting conversations and
+              collecting feedback.</p>
+          </div>
+          <div class="mesh-card">
+            <span
+              style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--text-grey-light); text-transform: uppercase; margin-bottom: 8px; display: block;">COMING
+              SOON</span>
+            <h4 class="mesh-card-title">Marketing Agent</h4>
+            <p class="mesh-card-text">Runs campaigns, designs announcement assets, and optimises reach to grow your
+              target audience.</p>
+          </div>
+          <div class="mesh-card">
+            <span
+              style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--text-grey-light); text-transform: uppercase; margin-bottom: 8px; display: block;">COMING
+              SOON</span>
+            <h4 class="mesh-card-title">Event Organiser Agent</h4>
+            <p class="mesh-card-text">Automates booking logistics, schedules speakers, coordinates ticketing, and
+              handles pricing dynamics.</p>
+          </div>
+          <div class="mesh-card">
+            <span
+              style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--text-grey-light); text-transform: uppercase; margin-bottom: 8px; display: block;">COMING
+              SOON</span>
+            <h4 class="mesh-card-title">Sponsorship Agent</h4>
+            <p class="mesh-card-text">Matches your community with relevant brand sponsors and auto-generates custom
+              sponsorship proposals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS & NETWORK SECTION -->
+    <section class="stats-section">
+      <div class="video-container">
+        <video autoplay loop muted playsinline class="bg-video">
+          <source src="assets/network_bg.webm" type="video/webm">
+        </video>
+        <div class="video-overlay dark-overlay"></div>
+      </div>
+
+      <div class="stats-content">
+        <!-- Gigantic text outline/fill headers -->
+        <div class="stats-marquee reveal-fade">
+          <h2 class="stats-giant-text">The</h2>
+          <h2 class="stats-giant-text fill-text">Network</h2>
+          <h2 class="stats-giant-text">of Human</h2>
+          <h2 class="stats-giant-text fill-text">Connection</h2>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box reveal-slide-up">
+            <h5 class="stat-num">10,000+</h5>
+            <p class="stat-label">active communities</p>
+          </div>
+          <div class="stat-box reveal-slide-up">
+            <h5 class="stat-num">85%</h5>
+            <p class="stat-label">member retention rate</p>
+          </div>
+          <div class="stat-box reveal-slide-up">
+            <h5 class="stat-num">2M+</h5>
+            <p class="stat-label">events successfully created</p>
+          </div>
+          <div class="stat-box reveal-slide-up">
+            <h5 class="stat-num">99.9%</h5>
+            <p class="stat-label">platform uptime guaranteed</p>
+          </div>
+          <div class="stat-box reveal-slide-up">
+            <h5 class="stat-num">50k+</h5>
+            <p class="stat-label">active connections formed</p>
+          </div>
+          <div class="stat-box promo-box reveal-slide-up">
+            <h3 class="promo-title">Work with the industry’s top community builders</h3>
+            <a href="http://download.addpinch.com" target="_blank" class="btn btn-light">Get started for free</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATIVE CLASS CALLOUT -->
+    <section class="creative-class-callout">
+      <div class="video-container">
+        <video autoplay loop muted playsinline class="bg-video">
+          <source src="assets/creative_class.webm" type="video/webm">
+        </video>
+        <div class="video-overlay dark-overlay"></div>
+      </div>
+
+      <div class="callout-content reveal-fade">
+        <h6 class="callout-title">Every member is a seed of connection.</h6>
+        <a href="http://download.addpinch.com" target="_blank" class="btn btn-light">Get started for free</a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL / RESEARCH SECTION -->
+    <section class="research-testimonial">
+      <div class="research-grid">
+        <div class="research-text-column reveal-slide-right">
+          <h2 class="research-title">How smart workflows create smarter communities.</h2>
+          <p class="research-desc">Pinch transforms participation, attendance and feedback into clear, visual insights.
+          </p>
+        </div>
+
+        <div class="research-image-column reveal-fade">
+          <img src="assets/research_portrait.png" alt="Pinch App User Interface" class="research-img">
+        </div>
+
+        <div class="research-quote-column reveal-slide-left">
+          <h5 class="quote-header">Vetted and verified member spaces.</h5>
+          <p class="quote-text">"Pinch has made our community and event experience incredibly easy for us! Easy
+            registrations and ticketing have helped us reach a larger, high-intent audience for our events with zero
+            administration."</p>
+          <span class="quote-author">— Rajat Taneja, Standup Comedian & Creator</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq"
+      style="background-color: var(--bg-secondary); padding: 120px 24px; border-top: 1px solid rgba(43, 43, 41, 0.05); border-bottom: 1px solid rgba(43, 43, 41, 0.05);">
+      <div
+        style="max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px;">
+        <div class="reveal-slide-right">
+          <h2 style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 24px; line-height: 1.15;">Frequently<br>asked
+            questions</h2>
+          <p style="font-size: 16px; color: var(--text-grey-dark);">Got questions about Pinch? Here's everything you
+            need to know about our community tools and automation features.</p>
+        </div>
+        <div class="faq-accordion reveal-fade">
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Is listing my community on Pinch free?</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="faq-icon">
+                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>Yes, listing your community on Pinch is completely free. You can create your public or private
+                community page, invite members, set up profiles, and manage your spaces at no cost. Optional paid plans
+                are available for advanced operational automation and larger scale events.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>How is Pinch different from traditional community tools?</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="faq-icon">
+                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>Unlike traditional community platforms that act as simple bulletin boards, Pinch adds intelligent
+                operational automation agents. These agents learn your workflows, handle member onboarding, automate
+                RSVP reminders, and maintain active engagement without requiring manual input.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Do I need coding or prompt-writing skills to use Pinch?</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="faq-icon">
+                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>No technical skills or prompt-writing are required. Simply describe what your community aims to
+                achieve, and Pinch will configure smart automation defaults that you can customize via our visual
+                dashboard in seconds.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>What features do I get out of the box?</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="faq-icon">
+                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <p>Once registered, you get full member onboarding, custom profiles, event creation (RSVPs, scheduling,
+                speaker rosters, ticket tiers), auto-generated feedback collection, and community dashboards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER HERO SECTION -->
+    <section class="footer-hero">
+      <div class="mesh-background" style="background-image: url('assets/footer_mesh.png');"></div>
+
+      <div class="footer-hero-content reveal-fade">
+        <h2 class="footer-hero-title">Start simplifying your</h2>
+        <h2 class="footer-hero-title italic-title">community today with Pinch.</h2>
+        <p class="footer-hero-desc">Let AI handle the operational logistics while you focus on what matters most:
+          building deep, meaningful human connections.</p>
+        <div style="display: flex; gap: 16px; justify-content: center;">
+          <a href="http://download.addpinch.com" target="_blank" class="btn btn-light">Get started for free</a>
+          <a href="https://calendly.com/partnerships-contra/contra-labs-partnership-request" target="_blank"
+            class="btn btn-outline" style="color: var(--bg-primary); border-color: rgba(251,250,246,0.3);">Book a
+            Demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="video-container">
+      <video autoplay loop muted playsinline class="bg-video">
+        <source src="assets/footer_bg.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay dark-overlay"></div>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 22h20L12 2z" fill="currentColor" />
+            </svg>
+            <span>Pinch</span>
+          </a>
+          <p class="footer-tagline">For curated, member-first communities. Powered by intelligent automation.</p>
+        </div>
+
+        <div class="footer-links-grid">
+          <div class="links-col">
+            <span class="links-title">Ecosystem</span>
+            <a href="#ecosystem">Smart Memberships</a>
+            <a href="#ecosystem">Seamless Events</a>
+            <a href="#agents">AI Agents</a>
+          </div>
+          <div class="links-col">
+            <span class="links-title">Company</span>
+            <a href="http://download.addpinch.com" target="_blank">Download App</a>
+            <a href="https://calendly.com/partnerships-contra/contra-labs-partnership-request" target="_blank">Book a
+              Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Pinch UG. All rights reserved.</p>
+
+        <div class="social-links">
+          <a href="https://twitter.com/SocialAcco89263" target="_blank" aria-label="Twitter">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <a href="https://de.linkedin.com/company/addpinch" target="_blank" aria-label="LinkedIn">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/addpinch/" target="_blank" aria-label="Instagram">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script File -->
+  <script src="index.js"></script>
+</body>
+
+</html>
