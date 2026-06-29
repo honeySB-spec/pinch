@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Pinch Blog | Article</title>
+  <meta name="description" id="page-desc" content="Pinch community insights and articles.">
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/logos_marquee.svg" type="image/svg+xml">
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <!-- Noise Overlay for premium paper texture feel -->
+  <div class="bg-noise" style="background-image: url('assets/bg_noise.png');"></div>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0 H24 L21.12 10.8 L10.56 13.2 L0 24 Z" fill="currentColor" />
+        </svg>
+        <span>Pinch</span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html#memberships" class="nav-link">Smart Memberships</a>
+        <a href="index.html#events" class="nav-link">Seamless Events</a>
+        <a href="index.html#agents" class="nav-link">AI Agents</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="mobile-menu-actions">
+          <a href="http://dashboard.addpinch.com" target="_blank" class="btn btn-outline">Login</a>
+          <a href="download.html" class="btn btn-primary">DOWNLOAD</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="http://dashboard.addpinch.com" target="_blank" class="btn btn-outline"
+          style="padding: 8px 20px; font-size: 14px;">Login</a>
+        <a href="download.html" class="btn btn-primary">DOWNLOAD</a>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="post-view">
+      <!-- DYNAMIC ARTICLE HEADER -->
+      <section class="post-header">
+        <div class="post-header-container reveal-fade">
+          <div class="post-meta-row">
+            <span class="post-meta-tag" id="post-display-tag">COMMUNITY</span>
+            <span id="post-date">October 24, 2025</span>
+          </div>
+          <h1 class="post-title" id="post-title-heading">How AI Cuts Event Admin Time by 50%</h1>
+          <div class="post-author-bar">
+            <div class="post-author-avatar">P</div>
+            <span id="post-author">Pinch Team</span>
+            <span style="color: var(--text-grey-light);">•</span>
+            <span id="post-readtime">4 min read</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- DYNAMIC BANNER IMAGE -->
+      <div class="post-hero-image-container reveal-fade">
+        <div class="post-hero-image-wrap">
+          <img id="post-cover" src="assets/card_arena.png" alt="Cover Image">
+        </div>
+      </div>
+
+      <!-- DYNAMIC ARTICLE CONTENT -->
+      <section class="post-container">
+        <!-- Sidebar Table of Contents -->
+        <aside class="post-sidebar">
+          <div class="post-sidebar-sticky">
+            <h4 class="post-toc-title">Table of Contents</h4>
+            <ul class="post-toc-list" id="post-toc">
+              <!-- Rendered dynamically based on headings -->
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Main Body -->
+        <div style="width: 100%;">
+          <article class="post-body" id="post-body-content" style="margin-bottom: 40px;">
+            <!-- Rendered dynamically -->
+          </article>
+
+          <div class="post-share-row">
+            <span class="post-share-label">Share this article</span>
+            <div class="post-share-links">
+              <a href="#" class="post-share-btn" id="share-twitter" target="_blank" aria-label="Share on X / Twitter">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+              <a href="#" class="post-share-btn" id="share-linkedin" target="_blank" aria-label="Share on LinkedIn">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 10.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0H1.771z" />
+                </svg>
+              </a>
+              <button class="post-share-btn" id="share-copy" aria-label="Copy Link">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RELATED ARTICLES FOOTER -->
+      <section class="post-related-section">
+        <div class="post-related-container">
+          <h2 class="post-related-title font-name-serif">Related Articles</h2>
+          <div class="blog-grid" id="related-grid">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ERROR VIEW (404 POST NOT FOUND) -->
+    <div id="error-view" style="display: none; padding: 180px 24px; text-align: center;">
+      <h2 style="font-size: clamp(32px, 5vw, 48px); margin-bottom: 24px;">Article Not Found</h2>
+      <p style="color: var(--text-grey-dark); margin-bottom: 32px; font-size: 18px;">Sorry, the article you are looking
+        for does not exist or has been moved.</p>
+      <a href="blog.html" class="btn btn-dark">Back to Blog Feed</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-hero-center">
+        <div class="footer-brand-large">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0 H24 L21.12 10.8 L10.56 13.2 L0 24 Z" fill="currentColor" />
+          </svg>
+          <span class="brand-name-serif">PINCH</span>
+        </div>
+        <p class="footer-tagline-centered">For curated, member-first communities. Powered by intelligent automation.</p>
+      </div>
+
+      <div class="footer-social-row">
+        <a href="https://twitter.com/SocialAcco89263" target="_blank" aria-label="Twitter">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+        <a href="https://de.linkedin.com/company/addpinch" target="_blank" aria-label="LinkedIn">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 10.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0H1.771z" />
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/addpinch/" target="_blank" aria-label="Instagram">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Download Mobile App -->
+      <div class="footer-download-row">
+        <p class="footer-download-label">Download the Mobile App</p>
+        <div class="footer-download-badges">
+          <a href="https://play.google.com/store/apps/details?id=com.addpinch&pli=1" target="_blank">
+            <img src="https://www.addpinch.com/wp-content/uploads/2025/11/Frame-2147223820.png"
+              alt="Get it on Google Play">
+          </a>
+          <a href="https://apps.apple.com/de/app/pinch-community-and-events/id1575423810" target="_blank">
+            <img src="https://www.addpinch.com/wp-content/uploads/2025/11/Frame-2147223819.png"
+              alt="Download on the App Store">
+          </a>
+        </div>
+      </div>
+
+
+      <nav class="footer-nav-row">
+        <a href="index.html#memberships">Smart Memberships</a>
+        <a href="index.html#events">Seamless Events</a>
+        <a href="index.html#agents">AI Agents</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+
+    <!-- Video wrap (consistent with homepage) -->
+    <div class="footer-video-wrap">
+      <video autoplay loop muted playsinline class="footer-video">
+        <source src="assets/footer_bg.mp4" type="video/mp4">
+      </video>
+      <div class="footer-video-fade"></div>
+    </div>
+  </footer>
+
+  <!-- Blog Database -->
+  <script src="assets/posts.js"></script>
+
+  <!-- GSAP Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Custom Script for Blog Details Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu Toggle
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navMenu = document.querySelector('.nav-menu');
+
+      if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+          mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+          mobileMenuBtn.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
+      }
+
+      // 2. Intersection Observer
+      const revealElements = document.querySelectorAll('.reveal-fade');
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // 3. Parse URL and load article
+      const urlParams = new URLSearchParams(window.location.search);
+      const postId = urlParams.get('id');
+
+      const postView = document.getElementById('post-view');
+      const errorView = document.getElementById('error-view');
+
+      if (!postId || !window.PINCH_POSTS) {
+        showError();
+        return;
+      }
+
+      // Find current article
+      const post = window.PINCH_POSTS.find(p => p.id === postId);
+
+      if (!post) {
+        showError();
+        return;
+      }
+
+      // Populate Meta & Page Titles
+      document.title = `${post.title} | Pinch Blog`;
+      document.getElementById('page-title').innerText = `${post.title} | Pinch Blog`;
+      document.getElementById('page-desc').setAttribute('content', post.excerpt);
+
+      // Map tags beautifully
+      let displayTag = 'Community';
+      if (post.id.includes('automation') || post.id.includes('ai')) {
+        displayTag = 'Automation';
+      } else if (post.id.includes('event')) {
+        displayTag = 'Event Ops';
+      }
+
+      // Populate header elements
+      document.getElementById('post-display-tag').innerText = displayTag;
+      document.getElementById('post-date').innerText = post.date;
+      document.getElementById('post-title-heading').innerText = post.title;
+      document.getElementById('post-author').innerText = post.author;
+      document.getElementById('post-readtime').innerText = post.readTime || '4 min read';
+      document.getElementById('post-cover').src = post.coverImage;
+      document.getElementById('post-cover').alt = post.title;
+
+      // Populate Article Body & build Table of Contents dynamically
+      const bodyContainer = document.getElementById('post-body-content');
+      const tocContainer = document.getElementById('post-toc');
+
+      bodyContainer.innerHTML = '';
+      tocContainer.innerHTML = '';
+
+      let headingIndex = 0;
+
+      post.content.forEach((block) => {
+        if (block.type === 'p') {
+          const p = document.createElement('p');
+          p.innerText = block.text;
+          bodyContainer.appendChild(p);
+        } else if (block.type === 'h2' || block.type === 'h3' || block.type === 'h4') {
+          headingIndex++;
+          const heading = document.createElement(block.type);
+          const headingId = `heading-${headingIndex}`;
+          heading.id = headingId;
+          heading.innerText = block.text;
+          bodyContainer.appendChild(heading);
+
+          // Add to TOC (only H2 and H3 to avoid clutter)
+          if (block.type === 'h2' || block.type === 'h3') {
+            const tocLi = document.createElement('li');
+            tocLi.className = 'post-toc-item';
+            // Indent H3s
+            if (block.type === 'h3') {
+              tocLi.style.paddingLeft = '12px';
+            }
+
+            const tocLink = document.createElement('a');
+            tocLink.href = `#${headingId}`;
+            tocLink.innerText = block.text;
+            tocLi.appendChild(tocLink);
+            tocContainer.appendChild(tocLi);
+          }
+        } else if (block.type === 'blockquote') {
+          const q = document.createElement('blockquote');
+          q.innerText = block.text;
+          bodyContainer.appendChild(q);
+        } else if (block.type === 'list') {
+          const list = document.createElement('ul');
+          block.items.forEach(itemText => {
+            const li = document.createElement('li');
+            li.innerText = itemText;
+            list.appendChild(li);
+          });
+          bodyContainer.appendChild(list);
+        } else if (block.type === 'img' || block.type === 'image') {
+          const imgWrap = document.createElement('div');
+          imgWrap.className = 'post-body-image-wrap';
+          const img = document.createElement('img');
+          img.src = block.src;
+          img.alt = block.alt || '';
+          img.loading = 'lazy';
+          imgWrap.appendChild(img);
+          bodyContainer.appendChild(imgWrap);
+        }
+      });
+
+      // Simple Table of Contents ScrollSpy active class highlighting
+      const tocLinks = document.querySelectorAll('.post-toc-item a');
+      const headingElements = bodyContainer.querySelectorAll('h2, h3');
+
+      function highlightTOC() {
+        let scrollPosition = window.scrollY + 150;
+
+        let currentActiveId = '';
+        headingElements.forEach(heading => {
+          if (heading.offsetTop <= scrollPosition) {
+            currentActiveId = heading.id;
+          }
+        });
+
+        tocLinks.forEach(link => {
+          const li = link.parentElement;
+          if (link.getAttribute('href') === `#${currentActiveId}`) {
+            li.classList.add('active');
+          } else {
+            li.classList.remove('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', highlightTOC);
+      highlightTOC(); // run initially
+
+      // Render Related Articles Feed (Filter out current article, take up to 3)
+      const relatedGrid = document.getElementById('related-grid');
+      relatedGrid.innerHTML = '';
+
+      const relatedPosts = window.PINCH_POSTS
+        .filter(p => p.id !== postId)
+        .slice(0, 3);
+
+      relatedPosts.forEach(relPost => {
+        let relDisplayTag = 'Community';
+        if (relPost.id.includes('automation') || relPost.id.includes('ai')) {
+          relDisplayTag = 'Automation';
+        } else if (relPost.id.includes('event')) {
+          relDisplayTag = 'Event Ops';
+        }
+
+        const relCard = document.createElement('a');
+        relCard.className = 'blog-card';
+        relCard.href = `post.html?id=${relPost.id}`;
+        relCard.innerHTML = `
+          <div class="blog-card-img-wrap">
+            <img src="${relPost.coverImage}" alt="${relPost.title}" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-card-tag">${relDisplayTag}</span>
+            <h3 class="blog-card-title">${relPost.title}</h3>
+            <p class="blog-card-excerpt">${relPost.excerpt}</p>
+            <div class="blog-card-meta">
+              <span>${relPost.date}</span>
+              <span>${relPost.readTime || '4 min read'}</span>
+            </div>
+          </div>
+        `;
+        relatedGrid.appendChild(relCard);
+      });
+
+      // Social Share Links activation
+      const twitterShare = document.getElementById('share-twitter');
+      const linkedinShare = document.getElementById('share-linkedin');
+      const copyShare = document.getElementById('share-copy');
+      const currentUrl = encodeURIComponent(window.location.href);
+      const shareTitle = encodeURIComponent(post.title);
+
+      if (twitterShare) twitterShare.href = `https://twitter.com/intent/tweet?url=${currentUrl}&text=${shareTitle}`;
+      if (linkedinShare) linkedinShare.href = `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
+
+      if (copyShare) {
+        copyShare.addEventListener('click', () => {
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            const originalIcon = copyShare.innerHTML;
+            copyShare.innerHTML = `
+              <svg width="14" height="14" fill="none" stroke="var(--accent-mint)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            `;
+            setTimeout(() => {
+              copyShare.innerHTML = originalIcon;
+            }, 2000);
+          });
+        });
+      }
+
+      function showError() {
+        postView.style.display = 'none';
+        errorView.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+
+</html>
