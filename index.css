@@ -1,5 +1,5 @@
 /* 
-  Contra Labs Homepage Styles
+ 
   Tailored Color Palette, Custom Typography, and Premium Micro-Animations
 */
 
@@ -965,8 +965,10 @@ a {
   left: 8%;
   width: 44px;
   height: 90px;
-  background-color: #2b5c46; /* Premium forest green/teal */
-  color: #fbfaf6; /* Cream color for icon */
+  background-color: #2b5c46;
+  /* Premium forest green/teal */
+  color: #fbfaf6;
+  /* Cream color for icon */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1775,7 +1777,8 @@ a {
 }
 
 .preloader .bg-noise {
-  opacity: 0.04; /* Matches body bg-noise opacity */
+  opacity: 0.04;
+  /* Matches body bg-noise opacity */
 }
 
 .preloader-content {
@@ -1798,10 +1801,13 @@ a {
 }
 
 @keyframes logoPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1) rotate(0deg);
     opacity: 0.85;
   }
+
   50% {
     transform: scale(1.08) rotate(5deg);
     opacity: 1;
@@ -2005,7 +2011,8 @@ a {
 
 .blog-card-img-wrap {
   width: 100%;
-  padding-bottom: 60%; /* 16:10 aspect ratio */
+  padding-bottom: 60%;
+  /* 16:10 aspect ratio */
   position: relative;
   overflow: hidden;
   background: var(--bg-secondary);
@@ -2156,7 +2163,8 @@ a {
 
 .post-hero-image-wrap {
   width: 100%;
-  padding-bottom: 50%; /* 2:1 aspect ratio */
+  padding-bottom: 50%;
+  /* 2:1 aspect ratio */
   position: relative;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
@@ -2623,7 +2631,8 @@ textarea.form-input {
   }
 
   .post-sidebar {
-    display: none; /* Hide TOC on mobile/tablet */
+    display: none;
+    /* Hide TOC on mobile/tablet */
   }
 
   .contact-grid {
@@ -2872,7 +2881,7 @@ textarea.form-input {
   .showcase-card {
     padding: 40px 24px;
   }
-  
+
   .showcase-row,
   .showcase-row-reverse {
     grid-template-columns: 1fr;
@@ -2915,9 +2924,9 @@ textarea.form-input {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
-              border-color 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.4s ease;
   box-shadow: 0 10px 30px rgba(43, 43, 41, 0.03);
 }
 
@@ -3005,7 +3014,7 @@ textarea.form-input {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
 .qr-code-img {
@@ -3055,9 +3064,17 @@ textarea.form-input {
 }
 
 @keyframes qr-scan {
-  0% { top: 10%; }
-  50% { top: 90%; }
-  100% { top: 10%; }
+  0% {
+    top: 10%;
+  }
+
+  50% {
+    top: 90%;
+  }
+
+  100% {
+    top: 10%;
+  }
 }
 
 .download-card-cta {
@@ -3140,7 +3157,7 @@ textarea.form-input {
     margin: 0 auto 48px;
     gap: 40px;
   }
-  
+
   .download-features-grid {
     grid-template-columns: 1fr;
     max-width: 600px;
